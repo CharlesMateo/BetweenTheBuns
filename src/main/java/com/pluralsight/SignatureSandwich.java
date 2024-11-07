@@ -80,7 +80,6 @@ public class SignatureSandwich extends Sandwich {
     public String getDetails() {
         StringBuilder details = new StringBuilder();
 
-        // Include the friendly name of the signature sandwich
         details.append(SignatureSandwich.getSignatureName(this.getSignatureType()))
                 .append(" (")
                 .append(getSize())
