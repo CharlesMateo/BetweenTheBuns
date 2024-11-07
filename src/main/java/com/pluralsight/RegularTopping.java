@@ -2,10 +2,11 @@ package com.pluralsight;
 
 public class RegularTopping extends Topping {
     public RegularTopping(String name) {
-        super(name);
+        super(name, ToppingType.Vegetable);
     }
 
-    public double getPrice(int size) {
+    @Override
+    public double calculatePrice(SandwhichSize size) {
         return 0;
     }
 }

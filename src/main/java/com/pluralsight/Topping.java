@@ -1,16 +1,22 @@
 package com.pluralsight;
 
 public abstract class Topping {
-    protected String name;
+    private String name;
+    private ToppingType type;
 
-    public Topping(String name) {
+    public Topping(String name, ToppingType type) {
         this.name = name;
+        this.type = type;
     }
 
     public String getName() {
         return name;
     }
 
-    public abstract double getPrice(int size);
+    public ToppingType getType() {
+        return type;
+    }
+
+    public abstract double calculatePrice(SandwhichSize size);
 }
 

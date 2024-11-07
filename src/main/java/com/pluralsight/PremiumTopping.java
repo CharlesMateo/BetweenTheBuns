@@ -1,16 +1,16 @@
 package com.pluralsight;
 
 public class PremiumTopping extends Topping {
-    public PremiumTopping(String name) {
-        super(name);
+    public PremiumTopping(String name,ToppingType type) {
+        super(name, type);
     }
 
-    public double getPrice(int size) {
+    @Override
+    public double calculatePrice(SandwhichSize size) {
         return switch (size) {
-            case 4 -> 1.00;
-            case 8 -> 2.00;
-            case 12 -> 3.00;
-            default -> 0;
+            case FourInch -> 1.00;
+            case EightInch -> 2.00;
+            case TweleveInch -> 3.00;
         };
     }
 }
