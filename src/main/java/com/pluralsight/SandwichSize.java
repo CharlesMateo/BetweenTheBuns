@@ -1,13 +1,13 @@
 package com.pluralsight;
 
-public enum SandwhichSize {
+public enum SandwichSize {
     FourInch(5.50),
     EightInch(7.00),
-    TweleveInch(8.50);
+    TwelveInch(8.50);
 
     private final double priceBase;
 
-    SandwhichSize(double priceBase) {
+    SandwichSize(double priceBase) {
         this.priceBase = priceBase;
     }
 
@@ -20,7 +20,7 @@ public enum SandwhichSize {
         return switch (this){
             case FourInch -> "4\"";
             case EightInch -> "8\"";
-            case TweleveInch -> "12\"";
+            case TwelveInch -> "12\"";
         };
     }
 }

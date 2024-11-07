@@ -6,7 +6,7 @@ public class RegularTopping extends Topping {
     }
 
     @Override
-    public double calculatePrice(SandwhichSize size) {
+    public double calculatePrice(SandwichSize size) {
         return 0;
     }
 }

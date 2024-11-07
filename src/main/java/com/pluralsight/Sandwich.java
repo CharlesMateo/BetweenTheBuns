@@ -3,19 +3,51 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Sandwhich {
-    private SandwhichSize size; // 4, 8, or 12in
-    private BreadType bread; // White, wheatt, rye, or a wrap
+public class Sandwich {
+    private SandwichSize size; // 4, 8, or 12in
+    private BreadType bread; // White, wheat, rye, or a wrap
     protected boolean toasted;
     private List<Topping> toppings = new ArrayList<>();
 
-    public Sandwhich(SandwhichSize size, BreadType bread) {
+    public Sandwich(SandwichSize size, BreadType bread) {
        this.size = size;
        this.bread = bread;
     }
 
+    public SandwichSize getSize() {
+        return size;
+    }
+
+    public BreadType getBread() {
+        return bread;
+    }
+
+    public List<Topping> getToppings() {
+        return toppings;
+    }
+
+    public void setSize(SandwichSize size) {
+        this.size = size;
+    }
+
+    public void setBread(BreadType bread) {
+        this.bread = bread;
+    }
+
+    public void setToppings(List<Topping> toppings) {
+        this.toppings = toppings;
+    }
+
     public void addTopping (Topping topping) {
         toppings.add(topping);
+    }
+
+    public boolean isToasted() {
+        return toasted;
+    }
+
+    public void setToasted(boolean toasted) {
+        this.toasted = toasted;
     }
 
     public double calculatePrice() {

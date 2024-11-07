@@ -6,11 +6,11 @@ public class PremiumTopping extends Topping {
     }
 
     @Override
-    public double calculatePrice(SandwhichSize size) {
+    public double calculatePrice(SandwichSize size) {
         return switch (size) {
             case FourInch -> 1.00;
             case EightInch -> 2.00;
-            case TweleveInch -> 3.00;
+            case TwelveInch -> 3.00;
         };
     }
 }

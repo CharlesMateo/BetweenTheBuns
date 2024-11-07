@@ -8,5 +8,6 @@ public enum ToppingType {
     Mayo,
     Ketchup,
     BBQ,
+    Butter,
     OliveOilAndVinegar;
 }

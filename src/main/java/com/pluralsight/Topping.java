@@ -17,6 +17,6 @@ public abstract class Topping {
         return type;
     }
 
-    public abstract double calculatePrice(SandwhichSize size);
+    public abstract double calculatePrice(SandwichSize size);
 }
 
