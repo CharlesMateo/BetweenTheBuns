@@ -30,29 +30,50 @@ public class UserInterface {
         boolean ordering = true;
 
         while (ordering) {
-            System.out.println("\nOrder Menu:");
-            System.out.println("1. Add Sandwich");
-            System.out.println("2. Add Drink");
-            System.out.println("3. Add Chips");
-            System.out.println("4. Checkout");
-            System.out.println("5. Cancel Order");
-
-            int choice = getUserInput(1, 5);
+            displayOrderMenu();
+            int choice = getUserInput(1, 6); // Updated range to include the new option for Signature Sandwiches
             switch (choice) {
                 case 1 -> addSandwich();
-                case 2 -> addDrink();
-                case 3 -> addChips();
-                case 4 -> {
+                case 2 -> addSignatureSandwich(); // New option for Signature Sandwiches
+                case 3 -> addDrink();
+                case 4 -> addChips();
+                case 5 -> {
                     checkout();
                     ordering = false;
                 }
-                case 5 -> {
+                case 6 -> {
                     cancelOrder();
                     ordering = false;
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
         }
+    }
+
+    private void displayOrderMenu() {
+        System.out.println("\nOrder Menu:");
+        System.out.println("1. Add Custom Sandwich");
+        System.out.println("2. Add Signature Sandwich"); // New option for Signature Sandwiches
+        System.out.println("3. Add Drink");
+        System.out.println("4. Add Chips");
+        System.out.println("5. Checkout");
+        System.out.println("6. Cancel Order");
+    }
+
+    private void addSignatureSandwich() {
+        System.out.println("\nSelect a Signature Sandwich:");
+        SignatureType[] signatureTypes = SignatureType.values();
+        for (int i = 0; i < signatureTypes.length; i++) {
+            System.out.println((i + 1) + ". " + signatureTypes[i].getFriendlyName());
+        }
+
+        int choice = getUserInput(1, signatureTypes.length);
+        SignatureType selectedType = signatureTypes[choice - 1];
+
+        // Create a SignatureSandwich based on the selected type
+        SignatureSandwich signatureSandwich = new SignatureSandwich(selectedType);
+        currentOrder.addSandwich(signatureSandwich); // Add the signature sandwich to the current order
+        System.out.println(selectedType.getFriendlyName() + " added to your order!");
     }
 
     private void addSandwich() {
