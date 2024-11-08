@@ -98,9 +98,10 @@ public class UserInterface {
         System.out.println("3. Tomato (Regular)");
         System.out.println("4. Meat of your choice (Premium)");
         System.out.println("5. Guacamole (Regular)");
+        System.out.println("6. Cheese (Premium)");
 
         while (true) {
-            int toppingChoice = getUserInput(0, 5);
+            int toppingChoice = getUserInput(0, 6);
             if (toppingChoice == 0) break;
 
             switch (toppingChoice) {
@@ -109,6 +110,7 @@ public class UserInterface {
                 case 3 -> sandwich.addTopping(new RegularTopping("Tomato"));
                 case 4 -> sandwich.addTopping(new PremiumTopping("Meat of your choice", ToppingType.Meat));
                 case 5 -> sandwich.addTopping(new RegularTopping("Guacamole"));
+                case 6 -> sandwich.addTopping(new PremiumTopping("Cheese", ToppingType.Cheese));
                 default -> System.out.println("Invalid topping choice. Try again.");
             }
             System.out.println("Topping added!");
